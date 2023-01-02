@@ -1,0 +1,60 @@
+version: "3.0"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+#- story: sad path 1
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - intent: mood_unhappy
+#  - action: utter_cheer_up
+#  - action: utter_did_that_help
+#  - intent: affirm
+#  - action: utter_happy
+#
+#- story: sad path 2
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - intent: mood_unhappy
+#  - action: utter_cheer_up
+#  - action: utter_did_that_help
+#  - intent: deny
+#  - action: utter_goodbye
+
+- story: sad path 3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: IT_services
+  - action: utter_services
+  - action: utter_ask_looking_for
+  - intent: categories
+  - action: action_receive_user_interest
+  - slot_was_set:
+      - looking_for: "web development"
+  - action: utter_ask_name
+  - intent: my_name_is
+  - action: action_receive_name
+  - slot_was_set:
+      - name: "amey naysathe"
+  - action: utter_ask_phone_no
+  - intent: my_phone_no_is
+  - action: action_receive_phone_number
+  - slot_was_set:
+      - phone_no: "9011301563"
+  - action: utter_ask_email_id
+  - intent: email_id
+  - action: action_receive_email_id
+  - slot_was_set:
+      - email_id: "ameynaysathe@gmail.com"
+  - action: utter_submit
+  - action: utter_slots_values
+  - action: action_email
+  - intent: goodbye
+  - action: utter_goodbye

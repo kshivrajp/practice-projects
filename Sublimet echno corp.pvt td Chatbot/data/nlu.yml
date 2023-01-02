@@ -1,0 +1,195 @@
+version: "3.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: IT_services
+  examples: |
+    - Yes, Software & Infrastructure
+    - Yes
+    - ya
+    - looking for It services
+
+- intent: not_interested
+  examples: |
+    - No thanks
+    - no thanks
+    - not at all
+
+- intent: my_name_is
+  examples: |
+    - Amey Naysathe
+    - Afreen Sayad
+    - Bhavesh bolt
+    - Chetan borji 
+    - Daivat kendu 
+    - danish anwari 
+    - Elon mask 
+    - farad kalbaskar 
+    - Ganesh takkar 
+    - Hitesh jain 
+    - Ishita kolhapurkar 
+    - Jagdish uttekar
+    - Karun nayer
+    - Lalit subhedhar 
+    - Mohanlaal shedge
+    - Nelima shrirdonkar
+    - Omkar nandgaonkar 
+    - Prajwal sawai 
+    - pooja dhanavde
+    - Quran lalse 
+    - Rashid khan
+    - aa 
+    - ab 
+    - bh
+    - ch 
+    - di 
+    - eshita
+    - fha 
+    - ganesh
+    - hru
+    - ishan
+    - ji 
+    - ku 
+    - la 
+    - mo 
+    - na
+    - om
+    - pu
+    - quran 
+    - ri
+    - si 
+    - ti 
+    - uma 
+    - vi 
+    - wa 
+    - xa 
+    - ya 
+    - zi
+    - Sanjay 
+    - ran 
+    - ta 
+    - dra
+    - sh
+    - na 
+    - ru
+    - shu 
+    - che 
+    - na
+    - tan
+    - qrtervfd 
+    - rharfg 
+    - raj 
+    - txbtys
+    - vqwexzn
+    - kar 
+    - wvsuts 
+    - rin 
+    - lesh 
+    - sunil goilkar 
+    - siya
+    - sana 
+    - za 
+    - vi 
+    - ee 
+    - mi
+    - kagiso 
+    - Shivaji Bhosale
+    - Tushar takey 
+    - Usain Bolt
+    - Virendar sehawag 
+    - Wasin akram 
+    - Xeara advani 
+    - I am Prem 
+    - sami sayad
+    - I am Akhilesh 
+    - Om bhagat 
+    - abcdefg hijklmnop 
+    - qrst uvwxyz
+    - I'm Divyang 
+    - I am Martand ahuja  
+    - My name is Sangmesh sharma
+    - Pushparaj 
+    - I am sunil 
+    - Myself Pranil
+    - vansh bali 
+    - priti patil
+    - This side Virat basharat 
+    - abc 
+    - def
+    - ghi 
+    - jkl 
+    - mno 
+    - pqr 
+    - stu
+    - vwx
+    - yz
+    - Mohammed shami
+  
+- intent: my_phone_no_is
+  examples: |
+    - [9011301563] (phone_no)
+    - My number is [1234567890] (phone_no)
+    - Here is my [7865234516] (phone_no)
+    - This is my number [8765432891] (phone_no)
+
+- intent: email_id
+  examples: |
+    - @gmail.com
+    - @yahoo.com
+    - @outlook.com
+    - @aol.com
+    - @icloud.com
+    - @yandex.com
+
+- intent: categories
+  examples: |
+    - [WEB DESIGNING] (looking_for)
+    - [web designing] (looking_for)
+    - [WEB DEVELOPMENT] (looking_for)
+    - [web development] (looking_for)
+    - [MOBILE APPLICATION] (looking_for)
+    - [mobile application] (looking_for)
+    - [CUSTOMISED SOFTWARE] (looking_for)
+    - [Customised software] (looking_for)
+    - [CYBER SECURITY] (looking_for)
+    - [cyber security] (looking_for)
+    - [WEB RESEARCH] (looking_for)
+    - [web research] (looking_for)
+    - [INFRASTRUCTURE MANAGEMENT] (looking_for)
+    - [infrastructure management] (looking_for)
+
