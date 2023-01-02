@@ -1,0 +1,99 @@
+version: "3.0"
+
+intents:
+  - greet
+  - goodbye
+  - bot_challenge
+  - IT_services
+  - not_interested
+  - my_name_is
+  - my_phone_no_is
+  - email_id
+  - categories
+
+entities:
+- looking_for
+- name
+- phone_no
+- email_id
+
+slots:
+  name:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: name
+  phone_no:
+    type: any
+    mappings:
+    - type: from_entity
+      entity: phone_no
+  email_id:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: email_id
+  looking_for:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: looking_for
+
+#forms:
+#  sublime_form:
+#    required_slots:
+#      - looking_for
+#      - name
+#      - phone_no
+#      - email_id
+
+responses:
+  utter_greet:
+  - text: "Hi, I am Tanaz. Welcome to the Sublime Technologies! \n  Are you looking for the software & infrastructure?"
+    buttons:
+    - title: "Yes, Software & Infrastructure"
+      payload: '/IT_services'
+    - title: "No"
+      payload: '/not_interested'
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_services:
+  - text: "We provide these services as given below. Which one are you looking for?"
+
+  utter_ask_looking_for:
+  - text: "1. WEB DESIGNING\n 2. WEB DEVELOPMENT\n 3. MOBILE APPLICATION\n 4. CUSTOMISED SOFTWARE\n 5. CYBER SECURITY\n 6. WEB RESEARCH\n 7. INFRASTRUCTURE MANAGEMENT"
+
+  utter_ask_name:
+  - text: "Sure, May I have your name please"
+
+  utter_ask_phone_no:
+  - text: "nice name, Your phone no. please!"
+
+  utter_ask_email_id:
+  - text: "Your email id please so that I can share more info about our services."
+
+  utter_submit:
+  - text: "Thank you {name} for the details! We'll connect back as soon as possible."
+
+  utter_slots_values:
+  - text: "Your information is recorded :\n - Name:  {name}\n - Contact no:  {phone_no}\n - Email Id:  {email_id}\n - Interested In:  {looking_for}"
+
+  utter_ask_continue:
+  - text: "Are you sure you want to stop the form?"
+
+actions:
+ - action_receive_name
+ - action_receive_phone_number
+ - action_receive_email_id
+ - action_receive_user_interest
+ - action_restart
+ - action_email
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
