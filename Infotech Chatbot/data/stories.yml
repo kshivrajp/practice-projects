@@ -1,0 +1,129 @@
+version: "3.0"
+
+stories:
+
+#- story: happy path
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+
+#- story: sad path 1
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - intent: mood_unhappy
+#  - action: utter_cheer_up
+#  - action: utter_did_that_help
+#  - intent: affirm
+#  - action: utter_happy
+#
+#- story: sad path 2
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - intent: mood_unhappy
+#  - action: utter_cheer_up
+#  - action: utter_did_that_help
+#  - intent: deny
+#  - action: utter_goodbye
+#
+# - story: sad path 3
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - intent: career_bright
+#  - action: utter_bright_career
+#  - action: utter_bright_career_options
+#  - intent: courses_options
+#  - action: utter_ask_name
+#  - intent: my_name_is
+#  - action: utter_ask_phone_no
+#  - intent: my_phone_no_is
+#  - action: utter_specific
+#  - action: utter_courses
+#  - intent: specific_courses
+#  - action: utter_ask_email
+#  - intent: email_id
+#  - action: utter_centers
+#  - action: utter_thank_you
+#  - intent: goodbye
+#  - action: utter_goodbye
+
+- story: sad path 3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: career_bright
+  - action: utter_bright_career
+  - action: utter_ask_looking_for
+  - intent: courses_options
+  - action: action_receive_user_interest
+  - slot_was_set:
+      - looking_for: "web designing"
+  - action: utter_ask_name
+  - intent: my_name_is
+  - action: action_receive_name
+  - slot_was_set:
+      - name: "amey naysathe"
+  - action: utter_ask_phone_no
+  - intent: my_phone_no_is
+  - action: action_receive_phone_number
+  - slot_was_set:
+      - phone_no: "9011301563"
+  - action: utter_specific
+  - action: utter_courses
+  - intent: specific_courses
+  - action: utter_ask_email_id
+  - intent: email_id
+  - action: action_receive_email_id
+  - slot_was_set:
+      - email_id: "ameynaysathe@gmail.com"
+  - action: utter_centers
+  - action: utter_slots_values
+  - action: utter_submit
+  - action: action_email
+  - intent: goodbye
+  - action: utter_goodbye
+
+#- story: User interrupts the form and doesn't want to continue
+#  steps:
+#   - intent: courses_options
+#   - action: sami_form
+#   - active_loop: sami_form
+#   - intent: stop
+#   - action: utter_ask_continue
+#   - intent: stop
+#   - action: action_deactivate_loop
+#   - active_loop: null
+
+- story: denyyy_path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: not_interested
+  - action: utter_all_right
+  - action: utter_for_details
+  - action: utter_for_naam
+  - intent: my_name_is
+  - action: action_receive_name
+  - slot_was_set:
+      - name: "Rohit sharma"
+  - action: utter_for_no
+  - intent: my_phone_no_is
+  - action: action_receive_phone_number
+  - slot_was_set:
+      - phone_no: "8748598329"
+  - action: utter_for_mail
+  - intent: email_id
+  - action: action_receive_email_id
+  - slot_was_set:
+      - email_id: "elonmask@gmail.com"
+  - action: utter_slots_values
+  - action: utter_again_thanks
+  - action: action_email
+
+
+- story: restart
+  steps:
+  - intent: goodbye
+  - action: action_restart
