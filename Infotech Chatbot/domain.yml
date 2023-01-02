@@ -1,0 +1,138 @@
+version: "3.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - career_bright
+  - not_interested
+  - courses_options
+  - my_name_is
+  - my_phone_no_is
+  - specific_courses
+  - email_id
+  - stop
+
+entities:
+- name
+- phone_no
+- email_id
+- looking_for
+
+slots:
+  name:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: name
+  phone_no:
+    type: any
+    mappings:
+    - type: from_entity
+      entity: phone_no
+  email_id:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: email_id
+  looking_for:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: looking_for
+
+#forms:
+#  sami_form:
+#    required_slots:
+#      - name
+#      - phone_no
+#      - email_id
+#      - looking_for
+
+responses:
+  utter_greet:
+  - text: "Hi, I am Hina. Are you looking for a course for your bright career?"
+    buttons:
+    - title: "Yes, a Bright Career"
+      payload: '/career_bright'
+    - title: "No thanks"
+      payload: '/not_interested'
+
+  utter_goodbye:
+  - text: "Bye Have a nice day {name}"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_bright_career:
+  - text: "for bright career, Which of these are you interested in?"
+
+  utter_ask_looking_for:
+  - text: "1. DIPLOMA IN DOT NET TECHNOLOGY\n 2. DIPLOMA IN WEB DESIGNING\n 3. DIPLOMA IN GRAPHIC DESIGNING\n 4. DIPLOMA IN PROGRAMMING"
+
+  utter_ask_name:
+  - text: "Sure, May I have your name please"
+
+  utter_ask_phone_no:
+  - text: "nice name, Your phone no. please!"
+
+  utter_specific:
+  - text: "Do you have any specific course in mind. Here is a list"
+
+  utter_courses:
+  - text: "java, .NET, PHP, SQl, Python, C, C++, Data Structure"
+
+  utter_ask_email_id:
+  - text: "Excellent, your email id please so that I can share more info about the course."
+
+  utter_centers:
+  - text: "We have our centres at following locations :\n - Seawoods/Nerul\n - Panvel\n - Bhandup\n"
+
+  utter_submit:
+  - text: "Thank you {name} for the details! We'll connect back as soon as possible."
+
+  utter_slots_values:
+  - text: "Your information is recorded :\n - Name:  {name}\n - Contact no:  {phone_no}\n - Email Id:  {email_id}\n - Interested In:  {looking_for}"
+
+  utter_invalid_phone_num:
+  - text: "You entered wrong name"
+
+#  utter_ask_continue:
+#  - text: "You want to continue?"
+
+  utter_all_right:
+  - text: "All right!"
+
+  utter_for_details:
+  - text: "Can you please share your details, so we can get in touch with you."
+
+  utter_for_naam:
+  - text: "Sure thing, can i have your name please?"
+
+  utter_for_no:
+  - text: "nice name, can i have your phone no. please?"
+
+  utter_for_mail:
+  - text: "thank you, can you please provide your email id, so i can connect you through email if call got disconnected."
+
+  utter_again_thanks:
+  - text: "Thank you {name} for the details! We'll give you a call as soon as possible."
+
+  utter_default:
+  - text: "I didn't quite understand that. Could you rephrase?"
+
+actions:
+ - action_receive_name
+ - action_receive_phone_number
+ - action_receive_email_id
+ - action_receive_user_interest
+ - action_restart
+ - action_email
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
